@@ -68,7 +68,7 @@ for i in range(9) :
     print('*' * cnt)
 
 
-
+########################## 출력안됨
 print('369게임 - 짝, 뽀숑, 뽀뽀숑, 뽀뽀뽀숑짝')
 # random_num = random.randrange(20, 51)
 random_num = random.randint(20, 50)
@@ -136,14 +136,8 @@ for i in range(1, random_num) :
             else :
                 print(i, '-')
         #그 외
-            if (i % 10) % 3 > 0 :
-                print(i, '짝')
-            else :
-                print(i, '-')
-
-
-
-
-
-
-
+        elif (i % 10) % 3 == 0 :
+            print(i, '짝')
+        else :
+            print(i, '-')
+########################## 출력안됨
