@@ -41,9 +41,7 @@
 #배열 두배 만들기
 # numbers = [1, 2, 100, -99, 5]
 #
-# answer = []
-# for i in numbers :
-#     answer.append(i * 2)
+# answer = [i * 2 for i in numbers]
 # print(answer)
 
 
