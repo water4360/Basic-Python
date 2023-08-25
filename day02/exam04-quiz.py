@@ -50,27 +50,27 @@
     2 // 10의 몫이 0이 나오면 반복문 중단.
 '''
 
-# num = input('정수를 입력하세요 : ')
-num = 139
-
-#1부터 증가할 숫자
-for i in range(1, num+1) :
-    print(f'{i:<3}', end=' ')
-    #모든 숫자를 쪼개서 arr에 넣고
-    arr = []
-    while i > 0:
-        result = i % 10
-        # print('result : ', result)
-        arr.insert(0, result)
-        # print('arr : ', arr)
-        i //= 10
-        # 10으로 나눈 나머지가 0일때
-        if result % 10 == 0:
-            print('뽀', '숑', end='', sep='')
-        if result in [3, 6, 9] :
-            print('짝', end='')
-
-    print()
+# # num = input('정수를 입력하세요 : ')
+# num = 139
+#
+# #1부터 증가할 숫자
+# for i in range(1, num+1) :
+#     print(f'{i:<3}', end=' ')
+#     #모든 숫자를 쪼개서 arr에 넣고
+#     arr = []
+#     while i > 0:
+#         result = i % 10
+#         # print('result : ', result)
+#         arr.insert(0, result)
+#         # print('arr : ', arr)
+#         i //= 10
+#         # 10으로 나눈 나머지가 0일때
+#         if result % 10 == 0:
+#             print('뽀', '숑', end='', sep='')
+#         if result in [3, 6, 9] :
+#             print('짝', end='')
+#
+#     print()
 
 
 '''
@@ -92,8 +92,8 @@ for i in range(1, num+1) :
 
     효율적으로 짜 보세요~
 '''
-#
-#
+
+
 # print('정수 입력(q 입력시 종료)')
 # data = []
 # while True :
@@ -121,3 +121,17 @@ for i in range(1, num+1) :
 #         print('(소수)', end=' ')
 #     print()
 
+print(' *** 교수님 풀이 ***')
+print('정수를 입력하시오. qq 입력시 종료')
+inputs = list()
+while True :
+    data = input()
+    if data.lower() == 'qq' :
+        break
+    inputs.append(int(data))
+print(inputs) #확인용
+
+##아앗 여기서 comprehension을 쓰면 되는구나...
+for num in inputs :
+    div = [i for i in range(1, num+1) if num % (i) == 0]
+    print(f'{num}의 약수 : {div}')
