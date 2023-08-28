@@ -2,7 +2,6 @@
 
 #230825(금) 집에서
 # print('Hello Python!!')
-from builtins import dict
 
 
 #최빈값 구하기 ***
