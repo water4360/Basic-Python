@@ -19,7 +19,7 @@ with open('input.txt', 'r') as file :
         splited_words = line.rstrip('\n').split()
         total_words += [re.sub(r'[^a-zA-Z]', '',word.lower()) for word in splited_words]
         total_words.sort()
-    # print(total_words, type(total_words))
+    print(f'총 개수 : {len(total_words)}')
 
     # 총 단어 개수
     # 단어별 빈도수
