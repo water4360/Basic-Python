@@ -19,7 +19,10 @@ def calc(way, *values) :
     result = 0
     if way == 'add' :
         for n in values :
-            result += n
+            if isinstance(n, list) :
+                result += sum(n)
+            else :
+                result += n
     if way == 'mul' :
         result = 1
         for n in values :
@@ -37,7 +40,10 @@ def calc(command, *args) :
     s = 0 if command == 'add' else 1
     for value in args :
         if command == 'add' :
-            s += value
+            if isinstance(value, list):
+                s += sum(value)
+            else:
+                s += value
         elif command == 'mul' :
             s *= value
 
@@ -49,6 +55,6 @@ def calc(command, *args) :
 print(calc('add', 12, 7))
 print(calc('add', 12, 6, 9))
 print(calc('mul', 12, 7))
-# print(calc('add', 12, [6, 9, 10], 30)) # 고민해볼 것!!!
+print('원소+배열 : ', calc('add', 12, [6, 9, 10], 30)) # 고민해볼 것!!!
 print(calc('mul', 1, 2, 3, 4, 5))
 # print(calc('div', 10, 5))
