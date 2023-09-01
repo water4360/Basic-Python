@@ -85,7 +85,8 @@
 # 주사위 게임 3 ********
 # 교집합??
 # 배열의 숫자를 센다. 개수를 키로 잡고 눈금을 값으로??
-from collections import Counterdef solution(a, b, c, d):
+from collections import Counter
+def solution(a, b, c, d):
     data = sorted([a,b,c,d])
     ul = list(set(data))
     print('정렬data : ', data)
