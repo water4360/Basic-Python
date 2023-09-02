@@ -23,15 +23,14 @@ class Employee :
         if 'salary' in kwargs :
             self.salary = kwargs['salary']
         Employee.total += 1
-        print('Employee() 초기화...')
+        print(f'{self.no}, {self.name}, 직급:{self.grade}, 연봉:{self.salary}')
 
     def count_total(self):
         print(f'총 사원 수는 {self.total}명 입니다.')
 
 class Manager(Employee) :
     def __init__(self, **kwargs):
-        super().__init__()
-        print('Manager() 초기화...')
+        super().__init__(**kwargs)
 
 
 print(f'총 사원 수는 {Employee.total}명 입니다.')
