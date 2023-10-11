@@ -26,8 +26,12 @@ def genModel_LDA(input_noun_list):
     corpus = [dictionary.doc2bow(word) for word in input_noun_list]
     k = 3
     lda_model = gensim.models.ldamulticore.LdaMulticore(corpus, iterations=12, num_topics=k, id2word=dictionary, passes=1, workers=10)
-    return lda_model
+    return lda_model, dictionary, corpus
 
+
+
+
+import pyLDAvis.gensim
 
 def main():
     filename = '블루베리_news.json'
@@ -37,14 +41,15 @@ def main():
     # 모델 구축
     # corpus = genModel_LDA(input_noun_list)
     # 모델 학습
-    lda_model = genModel_LDA(input_noun_list)
+    lda_model, dictionary, corpus = genModel_LDA(input_noun_list)
     result = lda_model.print_topics(num_topics=3, num_words=10)
     for cluster in result:
         print(cluster)
     # 학습모델로 분석
     pass
     # 시각화
-    return
+    lda_vis = pyLDAvis.gensim.prepare(lda_model, corpus, dictionary)
+    pyLDAvis.display(lda_vis)
 
 
 if __name__ == '__main__':
